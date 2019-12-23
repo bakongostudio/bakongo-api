@@ -1,11 +1,15 @@
 const express = require("express");
+class App {
+  constructor() {
+    this.express = express();
+    this.devMode = process.env.NODE_ENV !== "production";
 
-const routes = require("./routes/routes");
+    this.middleware();
+    this.routes();
+  }
 
-const app = express();
-const port = 3333;
-
-app.use(express.json());
-app.use(routes);
-
-app.listen(port);
+  middleware() {
+    this.express.use(express.json());
+  }
+  routes() {}
+}
