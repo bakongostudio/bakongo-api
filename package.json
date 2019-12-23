@@ -11,9 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^7.15.1",
+    "sequelize": "^5.21.3"
   },
   "devDependencies": {
-    "nodemon": "^1.19.3"
+    "nodemon": "^1.19.3",
+    "sequelize-cli": "^5.5.1"
   }
 }

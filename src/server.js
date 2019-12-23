@@ -13,3 +13,5 @@ class App {
   }
   routes() {}
 }
+
+module.exports = new App().express;
