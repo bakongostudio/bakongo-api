@@ -1,17 +1,25 @@
+require("dotenv").config();
+
 const express = require("express");
+
+const routes = require("./routes");
 class App {
   constructor() {
     this.express = express();
-    this.devMode = process.env.NODE_ENV !== "production";
+    this.isDev = process.env.NODE_ENV !== "production";
+    process.env.TZ = "America/Sao_Paulo";
 
-    this.middleware();
+    this.middlewares();
     this.routes();
   }
 
-  middleware() {
+  middlewares() {
     this.express.use(express.json());
   }
-  routes() {}
+
+  routes() {
+    this.express.use(routes);
+  }
 }
 
 module.exports = new App().express;
