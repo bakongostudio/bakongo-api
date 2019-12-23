@@ -8,7 +8,7 @@ const opts = {
   secretOrKey: process.env.APP_JWT_SECRET
 };
 
-module.exports = passport {
+module.exports = passport{
   passport.use(
     new JwtStrategy(opts, (jwt_payload, done) => {
       User.findById(jwt_payload.id)
