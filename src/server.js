@@ -1,13 +1,13 @@
-require("dotenv").config();
+require('dotenv').config();
 
-const express = require("express");
+const express = require('express');
 
-const routes = require("./routes");
+const routes = require('./routes');
 class App {
   constructor() {
     this.express = express();
-    this.isDev = process.env.NODE_ENV !== "production";
-    process.env.TZ = "America/Sao_Paulo";
+    this.isDev = process.env.NODE_ENV !== 'production';
+    process.env.TZ = 'America/Sao_Paulo';
 
     this.middlewares();
     this.routes();
