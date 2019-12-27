@@ -1,9 +1,10 @@
+require('dotenv').config();
 module.exports = {
   dialect: 'postgres',
-  host: 'localhost',
-  username: 'docker',
-  password: 'docker',
-  database: 'bsagency',
+  host: APP_DB_HOST,
+  username: APP_DB_USERNAME,
+  password: APP_DB_PASSWORD,
+  database: APP_DB_DATABASE,
   operatorAliases: false,
   define: {
     timestamps: true,
