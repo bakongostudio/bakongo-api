@@ -1,8 +1,8 @@
 require('dotenv').config();
 
-const express = require('express');
+import express from ('express');
 
-const routes = require('./routes');
+import routes from ('./routes');
 class App {
   constructor() {
     this.express = express();

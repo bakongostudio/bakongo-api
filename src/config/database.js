@@ -1,4 +1,3 @@
-require('dotenv').config();
 module.exports = {
   dialect: 'postgres',
   host: APP_DB_HOST,
