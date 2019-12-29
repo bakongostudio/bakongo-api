@@ -1,10 +1,10 @@
-const { validationResult } = require('express-validator');
+import { validationResult } from 'express-validator';
 
 module.exports = (req, res, next) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
+  const result = validationResult(req);
+  if (!result.isEmpty()) {
     let error = {};
-    errors.array().map(err => (error[err.param] = err.msg));
+    result.array().map(err => (error[err.param] = err.msg)); //TODO checke this out after - https://express-validator.github.io/docs/validation-result-api.html#array-options
     return res.status(422).json({ error });
   }
 
