@@ -1,4 +1,4 @@
-import { validationResult } from ('express-validator');
+import { validationResult } from 'express-validator';
 
 module.exports = (req, res, next) => {
   const result = validationResult(req);

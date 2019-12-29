@@ -1,4 +1,4 @@
-import express from ('express');
+import express from 'express';
 
 const routes = express.Router();
 
@@ -8,4 +8,4 @@ routes.get('/', (req, res, next) => {
   next();
 });
 
-module.exports = routes;
+export default routes;

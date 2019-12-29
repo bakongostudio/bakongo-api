@@ -1,8 +1,8 @@
-require('dotenv').config();
+import 'dotenv/config';
 
-import express from ('express');
+import express from 'express';
 
-import routes from ('./routes');
+import routes from './routes';
 class App {
   constructor() {
     this.express = express();
@@ -22,4 +22,4 @@ class App {
   }
 }
 
-module.exports = new App().express;
+export default new App().express;
