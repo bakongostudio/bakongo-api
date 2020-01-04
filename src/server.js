@@ -1,25 +1,6 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
+import server from './app';
 
-import express from 'express';
+dotenv.config({});
 
-import routes from './routes';
-class App {
-  constructor() {
-    this.express = express();
-    this.isDev = process.env.NODE_ENV !== 'production';
-    process.env.TZ = 'America/Sao_Paulo';
-
-    this.middlewares();
-    this.routes();
-  }
-
-  middlewares() {
-    this.express.use(express.json());
-  }
-
-  routes() {
-    this.express.use(routes);
-  }
-}
-
-export default new App().express;
+server.listen(process.env.PORT || 3030);
