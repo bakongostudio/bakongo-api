@@ -1,11 +1,11 @@
 'use strict';
 
-import fs from ('fs');
-import path from ('path');
-import Sequelize from ('sequelize');
+import fs from 'fs';
+import path from 'path';
+import Sequelize from 'sequelize';
 const basename = path.basename(__filename);
 // const env = process.env.NODE_ENV || "development";
-import config from ('../config/database');
+import config from '../config/database';
 const db = {};
 
 let sequelize = new Sequelize(
