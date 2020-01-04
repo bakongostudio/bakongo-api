@@ -7,14 +7,14 @@
   "author": "",
   "keywords": [],
   "scripts": {
-    "commit": "git-cz",
     "dev": "nodemon src/server.js",
     "start": "node build/server.js",
     "build": "sucrase ./src -d ./build --transforms imports"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   },
   "dependencies": {
