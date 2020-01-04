@@ -1,7 +1,7 @@
-import { Model, Sequelize } from 'sequelize';
+import Sequelize, { Model } from 'sequelize'
 
 class Token extends Model {
-  static init(sequelize) {
+  static init (sequelize) {
     super.init(
       {
         user_id: Sequelize.STRING,
@@ -10,10 +10,10 @@ class Token extends Model {
       {
         sequelize
       }
-    );
+    )
 
-    return this;
+    return this
   }
 }
 
-export default Token;
+export default Token

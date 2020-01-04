@@ -1,23 +1,23 @@
-import express from 'express';
+import express from 'express'
 
-import routes from './routes';
+import routes from './routes'
 class App {
-  constructor() {
-    this.express = express();
-    this.isDev = process.env.NODE_ENV !== 'production';
-    process.env.TZ = 'America/Sao_Paulo';
+  constructor () {
+    this.express = express()
+    this.isDev = process.env.NODE_ENV !== 'production'
+    process.env.TZ = 'America/Sao_Paulo'
 
-    this.middlewares();
-    this.routes();
+    this.middlewares()
+    this.routes()
   }
 
-  middlewares() {
-    this.express.use(express.json());
+  middlewares () {
+    this.express.use(express.json())
   }
 
-  routes() {
-    this.express.use(routes);
+  routes () {
+    this.express.use(routes)
   }
 }
 
-export default new App().express;
+export default new App().express

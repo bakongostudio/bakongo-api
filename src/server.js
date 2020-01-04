@@ -1,6 +1,6 @@
-import dotenv from 'dotenv';
-import server from './app';
+import dotenv from 'dotenv'
+import server from './app'
 
-dotenv.config({});
+dotenv.config({})
 
-server.listen(process.env.PORT || 3030);
+server.listen(process.env.PORT || 3030)
