@@ -7,7 +7,7 @@
   "author": "",
   "keywords": [],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git-cz",
     "dev": "nodemon src/server.js",
     "start": "node build/server.js",
     "build": "sucrase ./src -d ./build --transforms imports"
@@ -33,9 +33,16 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.4",
     "@commitlint/config-conventional": "^8.3.4",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "3.0.2",
     "husky": "^3.1.0",
     "nodemon": "^1.19.3",
     "sequelize-cli": "^5.5.1",
     "sucrase": "^3.11.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
