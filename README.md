@@ -59,9 +59,28 @@ This project is just for test my self, my limitation and until where I can go an
 * others will come here...
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
+First of all you need to create a local `.npmrc` in your home project folder, to stablishes the scope mapping.
 
-## Code Examples
+Add a line to .npmrc.s
+`@bakongostudio:registry=https://npm.pkg.github.com/`
+
+
+Install from the command line:
+
+`npm init`
+
+`npm install @bakongostudio/bakongo-api@1.0.0`
+
+Install via package.json:
+
+`"@bakongostudio/bakongo-api": "1.0.0"`
+
+.
+.
+.
+
+
+<!-- ## Code Examples
 Show examples of usage:
 `put-your-code-here`
 
@@ -73,7 +92,7 @@ List of features ready and TODOs for future development
 
 To-do list:
 * Wow improvement to be done 1
-* Wow improvement to be done 2
+* Wow improvement to be done 2 -->
 
 ## Status
 Project is: _in progress_
@@ -81,10 +100,10 @@ Project is: _in progress_
 We steel work on this Api, we just finish the first goal, create and configure 2 migrations (user & token), and their model configuration.
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+<!-- Add here credits. Project inspired by..., based on... -->
 
 ## Contact
-Created by [@lopesboa](https://github.com/lopesbo) - feel free to contact me!
+Created by [@lopesboa](https://github.com/lopesboa) - feel free to contact me!
 
 ## Licence
 MIT © [Bakongo Studio](https://github.com/BakongoStudio/bakongo-api)
