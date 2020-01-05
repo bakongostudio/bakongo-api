@@ -1,10 +1,10 @@
 {
-  "name": "bakongo-api",
+  "name": "@bakongostudio/bakongo-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "<h1 align=\"center\">   <img alt=\"Bakongo Agency\" title=\"Bakongo Agency\" src=\".github/logotipo.png\" width=\"200px\" /> </h1>",
   "main": "index.js",
   "license": "ISC",
-  "author": "lopesboa",
+  "author": "@lopesboa",
   "keywords": [],
   "scripts": {
     "dev": "nodemon src/server.js",
@@ -52,6 +52,12 @@
     }
   },
   "repository": {
-    "url": "https://github.com/BakongoStudio/bakongo-api.git"
-  }
+    "type": "git",
+    "url": "https://github.com/bakongostudio/bakongo-api.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/bakongostudio/bakongo-api/issues"
+  },
+  "homepage": "https://github.com/BakongoStudio/bakongo-api#readme"
 }
