@@ -1,6 +1,6 @@
 {
   "name": "@bakongostudio/bakongo-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "<h1 align=\"center\">   <img alt=\"Bakongo Agency\" title=\"Bakongo Agency\" src=\".github/logotipo.png\" width=\"200px\" /> </h1>",
   "main": "index.js",
   "license": "ISC",
