@@ -20,7 +20,7 @@ class User extends Model {
         email: Sequelize.STRING,
         password: Sequelize.VIRTUAL,
         password_hash: Sequelize.STRING,
-        level: Sequelize.INTEGER,
+        role: Sequelize.INTEGER,
         blocking_reason: Sequelize.STRING,
         is_verified: Sequelize.BOOLEAN,
         reset_password_token: Sequelize.STRING,
