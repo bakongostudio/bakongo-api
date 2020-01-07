@@ -34,6 +34,7 @@
 * [Features](#features)
 * [Status](#status)
 * [Inspiration](#inspiration)
+* [Contributing](#contributing)
 * [Contact](#contact)
 * [Licence](#licence)
 
@@ -59,21 +60,18 @@ This project is just for test my self, my limitation and until where I can go an
 * others will come here...
 
 ## Setup
-First of all you need to create a local `.npmrc` in your home project folder, to stablishes the scope mapping.
-
-Add a line to .npmrc.s
-`@bakongostudio:registry=https://npm.pkg.github.com/`
+First of all you need to `node` and `npm` installed in your computer. I use `yarn` as a pkg manager in this project, you can choose the one that prefer.
 
 
-Install from the command line:
+Clone the repo or download the zip file in your computer
 
-`npm init`
+```
+git clone https://github.com/bakongostudio/bakongo-api.git
+```
 
-`npm install @bakongostudio/bakongo-api@1.0.0`
+After clone go to `cd bakongo-api` and run de command `yarn` or  `npm run`
 
-Install via package.json:
-
-`"@bakongostudio/bakongo-api": "1.0.0"`
+In the `.env-sample` create your own configuration.
 
 .
 .
@@ -97,10 +95,13 @@ To-do list:
 ## Status
 Project is: _in progress_
  <!-- _finished_, _no longer continue_  -->
-We steel work on this Api, we just finish the first goal, create and configure 2 migrations (user & token), and their model configuration.
+I steel work on this Api, I just finish the first goal, create and configure 2 migrations (user & token), and their model configuration.
 
 ## Inspiration
 <!-- Add here credits. Project inspired by..., based on... -->
+
+## Contributing
+I'll be vwery thankful if you are being interested on making this project better. I encourage everyone to help improve `bakonko-api` with new features, bug fixes and performance issues. Please treat this project as you would treat your own project.
 
 ## Contact
 Created by [@lopesboa](https://github.com/lopesboa) - feel free to contact me!
