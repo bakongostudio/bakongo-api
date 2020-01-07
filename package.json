@@ -18,6 +18,7 @@
     }
   },
   "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.18.1",
     "cors": "^2.8.5",
@@ -55,7 +56,6 @@
     "type": "git",
     "url": "https://github.com/bakongostudio/bakongo-api.git"
   },
-
   "bugs": {
     "url": "https://github.com/bakongostudio/bakongo-api/issues"
   },
