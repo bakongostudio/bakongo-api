@@ -1,15 +1,15 @@
-import sendgridMail from '@sendgrid/mail'
+"use strict"; function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }Object.defineProperty(exports, "__esModule", {value: true});var _mail = require('@sendgrid/mail'); var _mail2 = _interopRequireDefault(_mail);
 
-import User from '../models/User'
+var _User = require('../models/User'); var _User2 = _interopRequireDefault(_User);
 
-sendgridMail.setApiKey(process.env.APP_SENDGRID_API_KEY)
+_mail2.default.setApiKey(process.env.APP_SENDGRID_API_KEY)
 
 class PasswordController {
   async recover (req, res) {
     try {
       const { email } = req.body
 
-      const user = await User.findOne({ email })
+      const user = await _User2.default.findOne({ email })
 
       if (!user) {
         return res.status(401).json({
@@ -34,7 +34,7 @@ class PasswordController {
             will remail unchanged. \n`
           }
 
-          sendgridMail.send(mailOptions, (error, _result) => {
+          _mail2.default.send(mailOptions, (error, _result) => {
             if (error) {
               return res.status(500).json({ message: error.message })
             }
@@ -53,7 +53,7 @@ class PasswordController {
     try {
       const { token } = req.params
 
-      const user = await User
+      const user = await _User2.default
         .findOne({
           reset_password_token: token,
           reset_password_expires: { $gt: Date.now() }
@@ -72,7 +72,7 @@ class PasswordController {
   }
 
   async resetPassword (req, res) {
-    User.findOne({
+    _User2.default.findOne({
       reset_password_token: req.params.token,
       reset_password_expires: { $gt: Date.now() }
     })
@@ -100,7 +100,7 @@ class PasswordController {
             ${user.email} has been changed.\n\n`
           }
 
-          sendgridMail.send(mailOptions, (error, result) => {
+          _mail2.default.send(mailOptions, (error, result) => {
             if (error) return res.status(500).json({ message: error.message })
 
             res.status(200).json({ message: 'Your password has been updated.' })
@@ -110,4 +110,4 @@ class PasswordController {
   }
 }
 
-export default new PasswordController()
+exports. default = new PasswordController()
