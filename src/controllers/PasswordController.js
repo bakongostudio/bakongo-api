@@ -34,7 +34,7 @@ class PasswordController {
             will remail unchanged. \n`
           }
 
-          sendgridMail.send(mailOptions, (error, result) => {
+          sendgridMail.send(mailOptions, (error, _result) => {
             if (error) {
               return res.status(500).json({ message: error.message })
             }
@@ -51,13 +51,63 @@ class PasswordController {
 
   async reset (req, res) {
     try {
+      const { token } = req.params
 
+      const user = await User
+        .findOne({
+          reset_password_token: token,
+          reset_password_expires: { $gt: Date.now() }
+        })
+
+      if (!user) {
+        return res.status(401).json({
+          message: 'Password reset is invalid or has expired.'
+        })
+      }
+
+      res.render('reset', { user })
     } catch (error) {
       res.status(500).json({ message: error.message })
     }
   }
 
-  async resetPassword (req, res) {}
+  async resetPassword (req, res) {
+    User.findOne({
+      reset_password_token: req.params.token,
+      reset_password_expires: { $gt: Date.now() }
+    })
+      .then((user) => {
+        if (!user) {
+          return res.status(401).json({
+            message: 'Password token is invalid or has expired.'
+          })
+        }
+
+        user.password_hash = req.body.password_hash
+        user.reset_password_token = undefined
+        user.reset_password_expires = undefined
+        user.is_verified = true
+
+        user.save((err) => {
+          if (err) return res.status(500).json({ message: err.message })
+
+          const mailOptions = {
+            to: user.email,
+            from: process.env.APP_FROM_MAIL,
+            subject: 'Password has been Changed!',
+            text: `Hi ${user.first_name} \n
+            This is a confirmation that the password of your account
+            ${user.email} has been changed.\n\n`
+          }
+
+          sendgridMail.send(mailOptions, (error, result) => {
+            if (error) return res.status(500).json({ message: error.message })
+
+            res.status(200).json({ message: 'Your password has been updated.' })
+          })
+        })
+      })
+  }
 }
 
 export default new PasswordController()
