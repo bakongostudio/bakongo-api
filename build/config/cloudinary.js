@@ -4,6 +4,6 @@ _cloudinary2.default.config({
   cloud_name: process.env.APP_CLOUDNARY_API_NAME,
   api_key: process.env.APP_CLOUDNARY_API_KEY,
   api_secret: process.env.APP_CLOUDNARY_API_SECRETE
-});
+})
 
-exports. default = _cloudinary2.default;
+exports. default = _cloudinary2.default

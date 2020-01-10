@@ -1,14 +1,15 @@
-import passport from 'passport';
+import passport from 'passport'
 
 module.exports = (req, res, next) => {
-  passport.authenticate('jwt', function(err, user, info) {
-    if (!user)
+  passport.authenticate('jwt', function (_err, user, info) {
+    if (!user) {
       return res
         .status(401)
-        .json({ message: 'Unauthorized Access, no Token Provided!' });
+        .json({ message: 'Unauthorized Access, no Token Provided!' })
+    }
 
-    req.user = user;
+    req.user = user
 
-    next();
-  })(req, res, next);
-};
+    next()
+  })(req, res, next)
+}
